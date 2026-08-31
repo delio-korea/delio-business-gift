@@ -2,117 +2,158 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>DELI’O Premium Gift Set</title>
-  <meta name="description" content="델리오 프리미엄 과일 선물세트 및 기업·단체 B2B 주문 안내">
-  <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; background:#f7f3eb; }
-    body {
-      margin: 0;
-      background: #f7f3eb;
-      color: #16271d;
-      font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    main { width: 100%; overflow: hidden; }
-    .section {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      line-height: 0;
-      background: #f7f3eb;
-      scroll-margin-top: 10px;
-    }
-    .section img {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: 0;
-      padding: 0;
-    }
-    .floating-cta {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 50;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 22px;
-      border-radius: 999px;
-      background: #173621;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 15px;
-      line-height: 1;
-      box-shadow: 0 12px 30px rgba(17, 48, 30, .20);
-      border: 1px solid rgba(255,255,255,.14);
-    }
-    .floating-cta span { margin-left: 10px; font-size: 19px; }
-    .top-link {
-      position: fixed;
-      left: 18px;
-      bottom: 22px;
-      z-index: 49;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,.92);
-      border: 1px solid rgba(23,54,33,.14);
-      color: #173621;
-      text-decoration: none;
-      font-weight: 900;
-      box-shadow: 0 8px 22px rgba(17, 48, 30, .10);
-    }
-    @media (max-width: 760px) {
-      .floating-cta {
-        left: 14px;
-        right: 14px;
-        bottom: 14px;
-        min-height: 50px;
-        font-size: 14px;
-      }
-      .top-link { display:none; }
-      body { padding-bottom: 68px; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="기업의 마음까지 품격 있게 전하는 DELIO 프리미엄 농산물 선물세트. 예산별 맞춤 구성, 대량 주문, 다중 배송을 한 번에 상담하세요.">
+  <meta property="og:title" content="DELIO 기업 전용 프리미엄 선물세트">
+  <meta property="og:description" content="임직원 복지부터 VIP 고객 감사까지, 기업의 목적과 예산에 맞춘 프리미엄 선물 솔루션">
+  <meta property="og:image" content="assets/premium-gift-hero-v2.png">
+  <meta name="theme-color" content="#173c32">
+  <title>DELIO | 기업 전용 프리미엄 선물세트</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="contact.css">
+  <script src="script.js" defer></script>
 </head>
-<body id="top">
-  <main>
-    <section class="section" id="hero">
-      <img src="assets/01-hero.png" alt="델리오 프리미엄 선물세트 소개">
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="DELIO 홈">
+      <span>DELI'O</span><small>PREMIUM GIFT</small>
+    </a>
+    <nav aria-label="주요 메뉴">
+      <a href="#collection">선물세트</a><a href="#service">기업 서비스</a><a href="#process">주문 절차</a>
+    </nav>
+    <div class="header-actions">
+      <a class="button button-small" href="#contact">기업 견적 문의</a>
+      <a class="button button-small header-kakao" href="http://pf.kakao.com/_RxnrxbX/chat" target="_blank" rel="noopener noreferrer">카카오 문의</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow">DELIO BUSINESS GIFT</p>
+        <h1>기업을 위한<br><em>정성스러운 과일 선물</em></h1>
+        <p class="hero-lead">엄선한 산지의 제철 과일을<br>예산과 목적에 맞춰 세심하게 구성합니다.</p>
+        <div class="hero-actions">
+          <a class="button" href="#contact">기업 견적 문의</a>
+          <a class="button hero-secondary" href="#collection">선물 구성 보기 <span>↓</span></a>
+        </div>
+        <ul class="hero-proof" aria-label="기업 구매 지원 항목">
+          <li>예산별 맞춤 구성</li><li>대량·다중 배송</li><li>세금계산서 발행</li>
+        </ul>
+      </div>
     </section>
-    <section class="section" id="why-delio">
-      <img src="assets/02-why-delio.png" alt="델리오가 과일을 고르는 기준">
+
+    <section class="client-showcase" aria-labelledby="client-showcase-title">
+      <p id="client-showcase-title">함께한 기업·기관</p>
+      <div class="client-logo-grid">
+        <div><img src="assets/clients/sura.png" alt="수라전통육개장 로고"></div>
+        <div><img src="assets/clients/first-academy.png" alt="퍼스트 아카데미 로고"></div>
+        <div><img src="assets/clients/ipapa.png" alt="국제자세정렬필라테스협회 로고"></div>
+        <div><img src="assets/clients/nh.png" alt="농협 로고"></div>
+        <div><img src="assets/clients/korea-university-alumni.png" alt="고려대학교 총동문회 로고"></div>
+        <div class="client-myongji"><img src="assets/clients/myongji-university.png" alt="명지대학교 로고"></div>
+        <div class="client-kbs"><img src="assets/clients/kbs.png" alt="KBS 로고"></div>
+        <div class="client-celin"><img src="assets/clients/celin.png" alt="주식회사 세림 로고"></div>
+        <div class="client-nh-investment"><img src="assets/clients/nh-investment.png" alt="NH투자증권 로고"></div>
+      </div>
     </section>
-    <section class="section" id="gift-collection">
-      <img src="assets/03-gift-collection.png" alt="델리오 선물세트 라인업">
+
+    <section class="intro section" id="solution">
+      <div class="section-label">01 / WHY DELIO</div>
+      <div class="intro-grid">
+        <div class="reveal"><p class="eyebrow">기업 선물의 새로운 기준</p><h2>선물 하나에도<br><span class="intro-title-line">기업의 기준이 담기니까.</span></h2></div>
+        <div class="intro-copy reveal">
+          <p class="intro-statement">기업 선물은 상품만 좋아서는 충분하지 않습니다.<br><span>과일을 고르는 기준부터 구성, 전달 과정까지</span><br>델리오가 기업 선물에 필요한 부분을 세심하게 준비합니다.</p>
+          <div class="standards">
+            <div><strong>01</strong><h3>인증된 산지와 상품</h3><p>델리오가 인증한 산지의<br>상품을 제안합니다.</p></div>
+            <div><strong>02</strong><h3>기업에 꼭 맞게</h3><p>예산·수량·목적에 맞춰<br>제안합니다.</p></div>
+            <div><strong>03</strong><h3>전담 담당자 배정</h3><p>상담부터 배송까지<br>책임지고 관리합니다.</p></div>
+            <div><strong>04</strong><h3>품질 안심 보장</h3><p>품질 이상 시 델리오가<br>책임지고 대응합니다.</p></div>
+          </div>
+        </div>
+      </div>
     </section>
-    <section class="section" id="gift-experience">
-      <img src="assets/04-gift-experience.png" alt="델리오 선물 포장과 받는 경험">
+
+    <section class="collection section" id="collection">
+      <div class="section-label">02 / CURATED COLLECTION</div>
+      <div class="collection-head reveal">
+        <div><p class="eyebrow">기업 맞춤 선물 구성</p><h2>프리미엄 선물세트 구성</h2></div>
+        <p>아래 구성은 예시입니다.<br>예산과 수량, 선물 대상에 맞는 구성을 제안해드립니다.</p>
+      </div>
+      <div class="product-filters" role="group" aria-label="가격대별 상품 보기">
+        <button class="product-filter active" type="button" data-filter="all">전체보기</button>
+        <button class="product-filter" type="button" data-filter="40-50">4–5만원대</button>
+        <button class="product-filter" type="button" data-filter="60-80">6–8만원대</button>
+        <button class="product-filter" type="button" data-filter="90-plus">9만원 이상</button>
+      </div>
+      <div class="cards" data-product-grid>
+        <article class="gift-card reveal" data-price="40-50"><span class="card-no">01</span><div class="card-art pear"></div><p class="card-tag">4–5만원대 · ESSENTIAL</p><h3>정갈한 감사 세트</h3><p>임직원 복지와 정기 선물에 알맞은 균형 있는 제철 구성</p><div class="product-card-footer"><strong>49,000원부터</strong><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="정갈한 감사 세트 상세 보기">+</button></div><div class="product-detail"><dl><div><dt>선물 구성</dt><dd>제철 사과 · 배 실속 혼합 구성</dd></div><div><dt>추천 대상</dt><dd>임직원 복지 · 단체 선물</dd></div><div><dt>주문 안내</dt><dd>수량에 따른 맞춤 포장 및 배송 협의</dd></div></dl></div></article>
+        <article class="gift-card featured reveal" data-price="60-80"><span class="card-no">02</span><div class="card-art mixed"></div><p class="card-tag">6–8만원대 · SIGNATURE</p><h3>프리미엄 혼합 세트</h3><p>중요 고객과 파트너에게 전하는 대표 과일 큐레이션</p><div class="product-card-footer"><strong>79,000원부터</strong><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="프리미엄 혼합 세트 상세 보기">+</button></div><div class="product-detail"><dl><div><dt>선물 구성</dt><dd>사과 3입 · 배 3입 · 샤인머스켓 1송이</dd></div><div><dt>추천 대상</dt><dd>주요 고객 · 파트너사 · 임원 선물</dd></div><div><dt>주문 안내</dt><dd>기업 메시지 카드 및 다중 배송 협의</dd></div></dl></div></article>
+        <article class="gift-card reveal" data-price="90-plus"><span class="card-no">03</span><div class="card-art vip"></div><p class="card-tag">9만원 이상 · PRIVATE</p><h3>VIP 맞춤 세트</h3><p>희소 품종과 고급 패키지를 결합한 특별 주문 구성</p><div class="product-card-footer"><strong>맞춤 견적</strong><button type="button" class="product-more" data-product-toggle aria-expanded="false" aria-label="VIP 맞춤 세트 상세 보기">+</button></div><div class="product-detail"><dl><div><dt>선물 구성</dt><dd>시즌별 최상급 과일과 희소 품종 맞춤 구성</dd></div><div><dt>추천 대상</dt><dd>VIP 고객 · 특별 감사 · 주요 행사</dd></div><div><dt>주문 안내</dt><dd>전용 패키지와 수량별 개별 견적 제공</dd></div></dl></div></article>
+      </div>
     </section>
-    <section class="section" id="b2b-service">
-      <img src="assets/05-b2b-service.png" alt="기업 단체 B2B 주문 서비스">
+
+    <section class="benefits section" id="service">
+      <div class="benefit-visual reveal"></div>
+      <div class="benefit-copy reveal">
+        <p class="eyebrow">기업 서비스</p><h2>기업 선물의 모든 과정,<br><span class="benefit-title-line">델리오가 세심하게 관리합니다.</span></h2>
+        <div class="benefit-list">
+          <div><span>01</span><div><h3>한 번에 받는 맞춤 제안</h3><p>예산·수량·대상에 맞는 구성을 제안합니다.</p></div></div>
+          <div><span>02</span><div><h3>대량·다중 배송</h3><p>여러 배송지의 주문을 한 번에 관리합니다.</p></div></div>
+          <div><span>03</span><div><h3>주문부터 배송까지 책임 관리</h3><p>진행 과정 전반을 델리오가 책임지고 관리합니다.</p></div></div>
+          <div><span>04</span><div><h3>기업 행정 지원</h3><p>견적서·거래명세서·세금계산서 등 필요한 서류를 지원합니다.</p></div></div>
+        </div>
+      </div>
     </section>
-    <section class="section" id="order-process">
-      <img src="assets/06-order-process.png" alt="기업 주문 진행 과정">
+
+    <section class="process section" id="process">
+      <div class="section-label">03 / 주문 절차</div>
+      <div class="process-head reveal"><p class="eyebrow">기업 주문 프로세스</p><h2>문의부터 배송까지,<br>간편하게 진행됩니다.</h2></div>
+      <ol class="steps">
+        <li class="reveal"><span>STEP 01</span><h3>문의 접수</h3><p>예산·수량·희망 일정을 전달해주세요.</p></li>
+        <li class="reveal"><span>STEP 02</span><h3>맞춤 제안·견적</h3><p>조건에 맞는 구성과 견적을 제안합니다.</p></li>
+        <li class="reveal"><span>STEP 03</span><h3>주문 확정</h3><p>상품·수량·배송 일정을 최종 확정합니다.</p></li>
+        <li class="reveal"><span>STEP 04</span><h3>출고·배송 관리</h3><p>선별·포장부터 배송까지 책임지고 관리합니다.</p></li>
+      </ol>
     </section>
-    <section class="section" id="faq">
-      <img src="assets/07-faq.png" alt="기업 담당자가 자주 묻는 질문">
+
+    <section class="contact section" id="contact">
+      <div class="contact-copy reveal"><p class="eyebrow">with delio</p><h2>기업의 좋은 선물,<br>델리오와 함께 준비하세요.</h2><p>소중한 분께 전하는 기업의 마음이<br>좋은 선물로 기억될 수 있도록 함께하겠습니다.</p></div>
+      <div class="contact-panel reveal">
+        <p class="contact-guide">문의 내용을 남겨주시면 담당자가 확인 후 맞춤 견적을 안내해드립니다.</p>
+        <form class="inquiry-form" data-inquiry-form>
+          <div class="inquiry-fields">
+            <label>기업명 <i>*</i><input name="기업명" required></label>
+            <label>담당자 성함 <i>*</i><input name="담당자명" required></label>
+            <label>연락처 <i>*</i><input type="tel" name="연락처" required placeholder="010-0000-0000"></label>
+            <label>이메일<input type="email" name="이메일" required></label>
+            <label>수량 / 예산<input name="수량·예산" placeholder="예: 100세트 / 세트당 7만원대"></label>
+            <label>희망 배송일<input type="date" name="희망 배송일"></label>
+          </div>
+          <label class="inquiry-message">문의 내용 <i>*</i><textarea name="문의 내용" rows="4" required placeholder="원하시는 선물 구성이나 배송 내용을 적어주세요."></textarea></label>
+          <button class="button inquiry-submit" type="submit">기업 견적 문의 보내기 <span>↗</span></button>
+        </form>
+        <p class="response-note">작성하신 내용은 이메일로 전달되며, 영업일 기준 1일 이내 답변드립니다.</p>
+      </div>
     </section>
-    <section class="section" id="contact">
-      <img src="assets/08-contact.png" alt="델리오 기업 단체 견적 문의">
+
+    <section class="faq section" id="faq">
+      <div class="section-label">04 / FAQ</div>
+      <div class="faq-head"><p class="eyebrow">자주 묻는 질문</p><h2>자주 묻는 질문</h2></div>
+      <div class="faq-list">
+        <details><summary>Q. 최소 주문 수량이 있나요?</summary><p>아니요. 최소 주문 수량 제한 없이 필요한 수량만큼 주문하실 수 있습니다.</p></details>
+        <details><summary>Q. 배송비는 어떻게 되나요?</summary><p>일반 택배 배송은 무료배송으로 진행됩니다.<br>단, 퀵 배송을 별도로 요청하시는 경우 퀵 배송비가 추가로 발생합니다.</p></details>
+        <details><summary>Q. 예산에 맞춰 구성을 변경할 수 있나요?</summary><p>네. 예산·수량·선물 대상에 맞춰 과일과 구성을 조정해 제안드립니다.</p></details>
+        <details><summary>Q. 선물 포장이나 기업 메시지 카드도 가능한가요?</summary><p>선물 포장은 상품 구성에 맞춰 진행됩니다.<br>기업에서 준비한 메시지 카드나 동봉물을 델리오로 보내주시면 선물세트에 함께 동봉해드립니다.</p></details>
+      </div>
     </section>
   </main>
 
-  <a class="floating-cta" href="#contact" aria-label="기업 단체 견적 문의 섹션으로 이동">
-    기업·단체 견적 문의 <span>→</span>
-  </a>
-  <a class="top-link" href="#top" aria-label="페이지 맨 위로">↑</a>
+  <footer><div class="footer-brand"><a class="brand" href="#top"><span>DELI'O</span><small>PREMIUM GIFT</small></a><p class="footer-slogan">좋은 선물을 고르는 기준, DELI'O</p><p class="footer-hours">평일 09:00 ~ 18:00<br>주말 및 공휴일 휴무</p></div><div class="footer-info"><p>경기도 고양시 덕양구 권율대로656 (더 클래시아 퍼스트), 13층 1329호</p><p><a href="mailto:deli_o@naver.com">deli_o@naver.com</a></p><p class="copyright">© 2026 DELIO. All rights reserved.</p></div></footer>
 </body>
 </html>
