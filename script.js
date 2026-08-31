@@ -50,11 +50,48 @@ productToggles.forEach((toggle) => {
 
 const inquiryForm = document.querySelector('[data-inquiry-form]');
 if (inquiryForm) {
-  inquiryForm.addEventListener('submit', (event) => {
+  const submitButton = inquiryForm.querySelector('[type="submit"]');
+  const formStatus = inquiryForm.querySelector('[data-form-status]');
+  const submitLabel = submitButton.innerHTML;
+
+  inquiryForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const values = [...new FormData(inquiryForm).entries()];
-    const body = values.map(([label, value]) => `${label}: ${value}`).join('\\n');
-    const subject = encodeURIComponent('DELIO 기업 선물세트 견적 문의');
-    window.location.href = `mailto:deli_o@naver.com?subject=${subject}&body=${encodeURIComponent(body)}`;
+    submitButton.disabled = true;
+    submitButton.textContent = '문의 내용을 보내는 중입니다...';
+    formStatus.className = 'form-status';
+    formStatus.textContent = '';
+
+    const values = Object.fromEntries(new FormData(inquiryForm));
+    values._subject = `[DELIO 기업 견적 문의] ${values.기업명 || ''}`;
+    values._template = 'table';
+    values._captcha = 'false';
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/deli_o@naver.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify(values)
+      });
+      const result = await response.json();
+      if (!response.ok || result.success === 'false' || result.success === false) {
+        throw new Error(result.message || 'Form submission failed');
+      }
+
+      inquiryForm.reset();
+      formStatus.classList.add('is-success');
+      formStatus.textContent = '문의가 정상적으로 접수되었습니다. 담당자가 확인 후 연락드리겠습니다.';
+    } catch (error) {
+      console.error('DELIO inquiry submission error:', error);
+      formStatus.classList.add('is-error');
+      formStatus.textContent = location.protocol === 'file:'
+        ? '로컬 파일에서는 전송할 수 없습니다. 배포된 홈페이지에서 다시 테스트해주세요.'
+        : '전송에 실패했습니다. 잠시 후 다시 시도하거나 카카오 문의를 이용해주세요.';
+    } finally {
+      submitButton.disabled = false;
+      submitButton.innerHTML = submitLabel;
+    }
   });
 }

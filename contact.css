@@ -2,6 +2,9 @@
 .header-actions{display:flex;align-items:center;gap:8px}
 .header-kakao{background:#fee500;color:#221f1f}
 .header-kakao:hover{background:#f4d900;color:#221f1f}
+.header-actions .button-small:not(.header-kakao):hover,
+.header-actions .button-small:not(.header-kakao):focus,
+.header-actions .button-small:not(.header-kakao):active{background:#fff;color:var(--green)}
 .footer-brand{display:grid;gap:9px}
 .footer-brand .brand{width:max-content}
 .footer-slogan{margin:0;color:rgba(255,255,255,.55);font-size:.7rem;letter-spacing:.02em}
@@ -42,6 +45,11 @@
 .inquiry-form label{display:block;position:relative;color:#4b2d1e;font-size:.78rem;font-weight:500}
 .inquiry-form label i{font-style:normal;color:#ef5350;font-weight:700;margin-left:2px}
 .inquiry-form input,.inquiry-form textarea{display:block;margin-top:8px;border:1px solid #dedede;padding:11px 12px;background:#fff;font-size:.88rem;line-height:1.4}
+.inquiry-form .form-honey{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+.inquiry-submit:disabled{cursor:wait;opacity:.72;transform:none}
+.form-status{min-height:1.5em;margin:0;text-align:center;font-size:.82rem;font-weight:600}
+.form-status.is-success{color:#17633f}
+.form-status.is-error{color:#b13a32}
 .inquiry-form input{height:44px}
 .inquiry-form textarea{min-height:100px;resize:vertical}
 .inquiry-message{margin-top:20px}
@@ -59,6 +67,7 @@
   .inquiry-submit{margin-top:14px;padding:10px 18px}
   .response-note{margin-top:12px;font-size:.66rem}
 }
+
 @media(max-width:540px){.header-actions{gap:5px}.header-actions .button-small{padding:8px 9px;font-size:.68rem}}
 .contact-guide{margin:0 0 26px;color:#52605a;font-size:.9rem}
 .contact-options{display:grid;gap:12px}
@@ -322,9 +331,11 @@
   .client-logo-grid .client-celin{grid-column:3!important;grid-row:2!important}
   .client-logo-grid .client-nh-investment{grid-column:4!important;grid-row:2!important}
   .client-logo-grid img{width:150px!important;max-width:150px!important;height:72px!important;transform:none!important;object-fit:contain}
-  /* Optical size correction: SURA is the visual baseline for the wide logos. */
+  /* Optical size correction for logos with tall artwork. */
+  .client-logo-grid>div:nth-child(1) img{transform:scale(.76)!important}
   .client-logo-grid>div:nth-child(4) img{transform:scale(.82)!important}
   .client-logo-grid>div:nth-child(5) img{transform:scale(.82)!important}
+  .client-logo-grid .client-myongji img{transform:scale(.76)!important}
   .client-logo-grid>div:nth-child(7) img{transform:scale(.82)!important}
   .client-logo-grid>div:nth-child(8) img{transform:scale(.78)!important}
   .client-logo-grid>div:nth-child(9) img{transform:scale(1.22)!important}
@@ -333,4 +344,23 @@
   .client-logo-grid .client-kbs,
   .client-logo-grid .client-celin,
   .client-logo-grid .client-nh-investment{transform:translateX(50%)}
+}
+
+/* 주문 절차: 표 형태 대신 가로 진행 타임라인 */
+@media(min-width:701px){
+  .steps{gap:28px;margin-top:72px;border-top:0}
+  .steps li,.steps li+li{position:relative;min-height:245px;padding:34px 28px 30px;border:1px solid rgba(23,60,50,.12);background:rgba(255,255,255,.38);box-shadow:0 14px 35px rgba(23,60,50,.045)}
+  .steps li:not(:last-child):after{content:"→";position:absolute;z-index:2;top:50%;right:-23px;width:18px;height:18px;display:grid;place-items:center;transform:translateY(-50%);color:#b99a5b;font:400 1.15rem/1 serif;background:var(--ivory)}
+  .steps span{display:block;width:auto;height:auto;margin:0 0 38px;color:#a88749;font:700 .68rem "Noto Sans KR",sans-serif;letter-spacing:.12em}
+  .steps li:first-child span,.steps li:not(:first-child) span{border:0;border-radius:0;background:transparent;color:#a88749;box-shadow:none}
+  .steps h3{margin:0 0 12px;font-size:1.3rem}
+  .steps p{margin:0;line-height:1.75}
+}
+
+@media(max-width:700px){
+  .steps{display:grid;grid-template-columns:1fr;gap:14px;margin-top:48px;padding-left:0;border-top:0}
+  .steps li,.steps li+li{position:relative;min-height:0;padding:24px 22px;border:1px solid rgba(23,60,50,.12);background:rgba(255,255,255,.38)}
+  .steps span{position:static;display:block;width:auto;height:auto;margin:0 0 18px;border:0;border-radius:0;background:transparent;color:#a88749;font-weight:700}
+  .steps h3{margin:0 0 7px}
+  .steps p{margin:0}
 }
