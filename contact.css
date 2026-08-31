@@ -49,6 +49,7 @@
 .inquiry-submit:disabled{cursor:wait;opacity:.72;transform:none}
 .form-status{min-height:1.5em;margin:0;text-align:center;font-size:.82rem;font-weight:600}
 .form-status.is-success{color:#17633f}
+.form-status.is-notice{color:#9a742f}
 .form-status.is-error{color:#b13a32}
 .inquiry-form input{height:44px}
 .inquiry-form textarea{min-height:100px;resize:vertical}

@@ -76,6 +76,13 @@ if (inquiryForm) {
         body: JSON.stringify(values)
       });
       const result = await response.json();
+      const needsActivation = result.success === 'false'
+        && /activation|activate form/i.test(result.message || '');
+      if (needsActivation) {
+        formStatus.classList.add('is-notice');
+        formStatus.textContent = '문의 접수 기능을 활성화하는 중입니다. 관리자 확인 후 다시 이용해주세요.';
+        return;
+      }
       if (!response.ok || result.success === 'false' || result.success === false) {
         throw new Error(result.message || 'Form submission failed');
       }
