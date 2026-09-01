@@ -100,11 +100,11 @@
 .hero .hero-secondary:hover{background:#fff}
 .hero .hero-secondary span{margin-left:16px}
 
-/* 샤인머스켓과 사과 3개로 편집한 최신 선물세트 이미지 */
-.hero-media{background-image:linear-gradient(90deg,rgba(9,29,24,.95) 0%,rgba(9,29,24,.7) 38%,rgba(9,29,24,.05) 70%),url("assets/premium-gift-hero-v2.png")}
+/* 보자기 포장과 제철 과일을 담은 추석 메인 비주얼 */
+.hero-media{background-image:linear-gradient(90deg,rgba(9,29,24,.96) 0%,rgba(9,29,24,.74) 36%,rgba(9,29,24,.08) 68%),url("assets/chuseok-hero-v2.png")}
 .card-art.mixed{background-image:url("assets/premium-gift-hero-v2.png")}
 .benefit-visual{background-image:linear-gradient(rgba(17,48,40,.1),rgba(17,48,40,.4)),url("assets/premium-gift-hero-v2.png")}
-@media(max-width:900px){.hero-media{background-image:linear-gradient(0deg,rgba(9,29,24,.95),rgba(9,29,24,.15) 75%),url("assets/premium-gift-hero-v2.png")}}
+@media(max-width:900px){.hero-media{background-image:linear-gradient(0deg,rgba(9,29,24,.96),rgba(9,29,24,.12) 78%),url("assets/chuseok-hero-v2.png");background-position:68% center}}
 
 /* WHY DELIO 우측 기준 영역 */
 .intro-statement{margin:0;color:#59645e;font-size:1.02rem;line-height:1.9}
@@ -209,13 +209,13 @@
 @media(max-width:540px){.product-filters{margin-top:38px}.product-filter{padding:13px 17px}.product-filter:first-child{padding-right:22px}}
 @media(max-width:540px){.product-filters{grid-template-columns:repeat(2,minmax(0,1fr));border-bottom:0}.product-filter,.product-filter:first-child{padding:13px 8px;border-bottom:1px solid var(--line)}.product-filter.active:after{right:0}}
 
-/* 가격대 선택 버튼 */
-.product-filters{width:min(680px,100%);gap:8px;margin:52px auto 0;border-bottom:0}
-.product-filter,.product-filter:first-child{border:1px solid rgba(23,60,50,.28);border-radius:3px;background:#f8f4eb;color:#66716b;padding:11px 10px;font-size:.78rem}
-.product-filter:hover{border-color:#173c32;color:#173c32;background:#fff}
-.product-filter.active{border-color:#173c32;background:#173c32;color:#fff}
-.product-filter.active:after,.product-filter:first-child.active:after{display:none}
-@media(max-width:540px){.product-filters{width:100%;gap:8px;margin-top:36px}.product-filter,.product-filter:first-child{border:1px solid rgba(23,60,50,.28);padding:11px 7px}}
+/* 가격대 선택 메뉴: 구분선과 선택 밑줄로 구성 */
+.product-filters{width:min(820px,100%);gap:0;margin:52px auto 0;border-bottom:1px solid rgba(23,60,50,.14)}
+.product-filter,.product-filter:first-child{position:relative;border:0;border-radius:0;background:transparent;color:#5f6863;padding:17px 12px;font-size:.92rem;font-weight:600;white-space:nowrap}
+.product-filter+.product-filter:before{content:"";position:absolute;left:0;top:50%;width:1px;height:20px;background:rgba(23,60,50,.22);transform:translateY(-50%)}
+.product-filter:hover,.product-filter.active{border:0;background:transparent;color:#173c32}
+.product-filter.active:after,.product-filter:first-child.active:after{display:block;content:"";position:absolute;left:16px;right:16px;bottom:-1px;height:2px;background:#173c32}
+@media(max-width:540px){.product-filters{width:100%;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:36px;border-bottom:1px solid rgba(23,60,50,.14)}.product-filter,.product-filter:first-child{border:0;padding:14px 3px;font-size:clamp(.63rem,2.8vw,.76rem)}.product-filter.active:after,.product-filter:first-child.active:after{right:7px;left:7px}}
 
 .product-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:25px;padding-top:18px;border-top:1px solid rgba(23,60,50,.2)}
 .product-card-footer strong{margin:0;font-size:.86rem}
@@ -237,6 +237,26 @@
 
 .gift-card .card-no{z-index:2;right:16px;top:16px;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#173c32;color:#fff;font-size:.68rem;opacity:1;box-shadow:0 5px 16px rgba(10,35,28,.2)}
 .gift-card.featured .card-no{background:#d6bc83;color:#173c32;box-shadow:0 5px 16px rgba(0,0,0,.18)}
+
+/* 상품 카드: 상단 이미지와 하단 정보가 분리된 각진 카탈로그형 레이아웃 */
+.gift-card,.gift-card.featured{padding:0 0 28px;border:1px solid rgba(23,60,50,.12);border-radius:0;background:#f8f4ec;color:var(--ink);transform:none;overflow:hidden}
+.gift-card .card-art{height:auto;aspect-ratio:1.18/1;margin:0 0 25px;background-position:center;background-size:cover}
+.gift-card .card-art.pear{background-image:url("assets/shine-muscat-5box.png")}
+.gift-card .card-art.mixed{background-image:url("assets/apple-gift-16.png")}
+.gift-card .card-art.pear-twelve{background-image:url("assets/pear-gift-12.png")}
+.gift-card .card-art.apple-twelve{background-image:url("assets/apple-gift-12.png")}
+.gift-card .card-art.vip{background-image:url("assets/chuseok-apple-gift-v3.png")}
+.gift-card>.card-tag,.gift-card>h3,.gift-card>p:not(.card-tag){margin-left:28px;margin-right:28px}
+.gift-card>h3{font-size:1.38rem;margin-top:7px;margin-bottom:8px}
+.gift-card>p:not(.card-tag){min-height:48px;margin-top:0;margin-bottom:0;color:#53605a;opacity:1}
+.gift-card .product-card-footer{margin:24px 28px 0}
+.gift-card .product-detail{margin:0 28px}
+.gift-card.featured .product-card-footer,.gift-card.featured .product-detail dl>div{border-color:rgba(23,60,50,.2)}
+.gift-card.featured .product-more{border-color:rgba(23,60,50,.35);color:#173c32}
+.gift-card.featured .product-more:hover{background:#173c32;border-color:#173c32;color:#fff}
+.gift-card.featured .product-detail dt{color:#173c32}
+.gift-card.featured .product-detail dd{color:#6e7872}
+@media(max-width:540px){.gift-card>.card-tag,.gift-card>h3,.gift-card>p:not(.card-tag){margin-left:22px;margin-right:22px}.gift-card .product-card-footer{margin-left:22px;margin-right:22px}.gift-card .product-detail{margin-left:22px;margin-right:22px}}
 
 .benefit-copy h2{font-size:clamp(2.1rem,3.1vw,3.35rem)}
 .benefit-title-line{white-space:nowrap}
@@ -323,14 +343,10 @@
 .client-logo-grid>div:nth-child(9){grid-column:2 / 4}
 @media(max-width:620px){.client-logo-grid>div{min-height:66px}.client-logo-grid img{max-width:138px;height:58px}}
 
-/* Desktop client logos: fixed five-over-four layout, with NH Investment to the right of CELIN. */
+/* Desktop client logos: four logos per row. */
 @media(min-width:901px){
-  .client-logo-grid{max-width:1100px;grid-template-columns:repeat(5,minmax(0,1fr));column-gap:34px;row-gap:34px}
+  .client-logo-grid{max-width:1000px;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:48px;row-gap:34px}
   .client-logo-grid>div{grid-column:auto!important;grid-row:auto!important;min-height:82px;margin:0;padding:0;border:0}
-  .client-logo-grid .client-myongji{grid-column:1!important;grid-row:2!important}
-  .client-logo-grid .client-kbs{grid-column:2!important;grid-row:2!important}
-  .client-logo-grid .client-celin{grid-column:3!important;grid-row:2!important}
-  .client-logo-grid .client-nh-investment{grid-column:4!important;grid-row:2!important}
   .client-logo-grid img{width:150px!important;max-width:150px!important;height:72px!important;transform:none!important;object-fit:contain}
   /* Optical size correction for logos with tall artwork. */
   .client-logo-grid>div:nth-child(1) img{transform:scale(.76)!important}
@@ -338,30 +354,259 @@
   .client-logo-grid>div:nth-child(5) img{transform:scale(.82)!important}
   .client-logo-grid .client-myongji img{transform:scale(.76)!important}
   .client-logo-grid>div:nth-child(7) img{transform:scale(.82)!important}
-  .client-logo-grid>div:nth-child(8) img{transform:scale(.78)!important}
-  .client-logo-grid>div:nth-child(9) img{transform:scale(1.22)!important}
-  /* Keep the second row's grid line, while placing its logos between the first-row logos. */
-  .client-logo-grid .client-myongji,
-  .client-logo-grid .client-kbs,
-  .client-logo-grid .client-celin,
-  .client-logo-grid .client-nh-investment{transform:translateX(50%)}
+  .client-logo-grid .client-nh-investment img{transform:scale(1.22)!important}
 }
 
-/* 주문 절차: 표 형태 대신 가로 진행 타임라인 */
+/* 주문 절차: 원형 아이콘과 화살표로 이어지는 가로 프로세스 */
 @media(min-width:701px){
-  .steps{gap:28px;margin-top:72px;border-top:0}
-  .steps li,.steps li+li{position:relative;min-height:245px;padding:34px 28px 30px;border:1px solid rgba(23,60,50,.12);background:rgba(255,255,255,.38);box-shadow:0 14px 35px rgba(23,60,50,.045)}
-  .steps li:not(:last-child):after{content:"→";position:absolute;z-index:2;top:50%;right:-23px;width:18px;height:18px;display:grid;place-items:center;transform:translateY(-50%);color:#b99a5b;font:400 1.15rem/1 serif;background:var(--ivory)}
-  .steps span{display:block;width:auto;height:auto;margin:0 0 38px;color:#a88749;font:700 .68rem "Noto Sans KR",sans-serif;letter-spacing:.12em}
+  .steps{gap:clamp(42px,6vw,92px);margin-top:72px;border-top:0}
+  .steps li,.steps li+li{position:relative;min-height:0;padding:0;text-align:center;border:0;background:transparent;box-shadow:none}
+  .steps li:not(:last-child):after{content:"→";position:absolute;z-index:2;top:92px;left:calc(100% + 10px);width:calc(6vw - 6px);transform:translateY(-50%);color:#b8a47a;font:300 1.4rem/1 serif;background:transparent}
+  .steps span{display:block;width:auto;height:auto;margin:22px 0 10px;color:#a88749;font:700 .72rem "Noto Sans KR",sans-serif;letter-spacing:.12em}
   .steps li:first-child span,.steps li:not(:first-child) span{border:0;border-radius:0;background:transparent;color:#a88749;box-shadow:none}
-  .steps h3{margin:0 0 12px;font-size:1.3rem}
-  .steps p{margin:0;line-height:1.75}
+  .steps h3{margin:0 0 12px;font-size:1.32rem}
+  .steps p{margin:0;color:#647069;line-height:1.75}
+}
+
+.step-number{display:block;margin-bottom:16px;color:#a88749;font:500 1rem "Noto Serif KR",serif}
+.step-icon{width:128px;height:128px;margin:0 auto;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.48)}
+.step-icon svg{width:64px;height:64px;fill:none;stroke:#173c32;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* 본문 가독성: 제목을 제외한 설명 문구를 한 단계 확대 */
+.hero-lead{font-size:clamp(1rem,1.2vw,1.14rem)}
+.intro-statement{font-size:1.08rem}
+.standards p{font-size:.84rem;line-height:1.78}
+.collection-head>p{font-size:1rem;line-height:1.8}
+.gift-card>p:not(.card-tag){font-size:.92rem;line-height:1.75}
+.gift-card .product-card-footer strong{font-size:.94rem}
+.product-detail dt{font-size:.76rem}
+.product-detail dd{font-size:.79rem}
+.benefit-list p{font-size:.92rem;line-height:1.75}
+.steps p{font-size:.9rem}
+.care-description{font-size:1.02rem}
+.faq-list details p{font-size:.93rem}
+.contact-copy>p:last-child,.contact-guide{font-size:.96rem;line-height:1.8}
+.contact-option em{font-size:.82rem}
+
+@media(max-width:700px){
+  .steps{display:grid;grid-template-columns:1fr;gap:52px;margin-top:48px;padding-left:0;border-top:0}
+  .steps li,.steps li+li{position:relative;min-height:0;padding:0;text-align:center;border:0;background:transparent}
+  .steps li:not(:last-child):after{content:"↓";position:absolute;left:50%;bottom:-40px;transform:translateX(-50%);color:#b8a47a;font-size:1.2rem}
+  .steps span{position:static;display:block;width:auto;height:auto;margin:18px 0 8px;border:0;border-radius:0;background:transparent;color:#a88749;font-weight:700}
+  .steps h3{margin:0 0 7px}
+  .steps p{margin:0}
+  .step-number{margin-bottom:12px}
+  .step-icon{width:112px;height:112px}
+  .step-icon svg{width:56px;height:56px}
+}
+
+/* 최종 모바일 최적화 */
+@media(max-width:700px){
+  html,body{max-width:100%;overflow-x:clip}
+  body{font-size:16px}
+  .site-header{height:68px;padding:0 14px;gap:8px}
+  .site-header.scrolled{height:62px}
+  .site-header .brand{flex:0 0 auto;gap:0}
+  .site-header .brand span{font-size:1.08rem;letter-spacing:.05em}
+  .site-header .brand small{display:none}
+  .header-actions{margin-left:auto;gap:5px}
+  .header-actions .button-small{min-height:40px;padding:8px 10px;font-size:.68rem;line-height:1.25;white-space:nowrap}
+
+  .hero{min-height:100svh;align-items:end}
+  .hero-media{background-position:70% center}
+  .hero-copy{width:100%;margin:0;padding:116px 20px 42px}
+  .hero h1{font-size:clamp(1.9rem,9vw,2.5rem);line-height:1.3}
+  .hero h1 em{white-space:normal}
+  .hero-lead{margin:22px 0 26px;font-size:.96rem;line-height:1.75;word-break:keep-all}
+  .hero-actions{width:100%;gap:10px}
+  .hero-actions .button,.hero-actions .text-link{min-height:46px}
+  .hero-actions .button{width:min(100%,280px)}
+  .hero-proof{display:grid;grid-template-columns:1fr;gap:8px;margin-top:32px;font-size:.76rem}
+
+  .section{padding:74px 20px}
+  .section-label{margin-bottom:45px}
+  .section h2{font-size:clamp(1.85rem,9vw,2.55rem);line-height:1.3}
+  .eyebrow{margin-bottom:16px}
+  .intro-grid{gap:30px}
+  .intro-statement{font-size:.98rem;line-height:1.85;word-break:keep-all}
+  .standards{margin-top:32px}
+  .standards>div,.standards>div:first-child{padding:22px 0}
+  .standards p{min-height:0;font-size:.86rem}
+
+  .client-showcase{padding:28px 18px 36px}
+  .client-showcase>p{margin-bottom:26px;font-size:.92rem}
+  .client-logo-grid{column-gap:22px;row-gap:24px}
+  .client-logo-grid>div{min-height:58px!important}
+  .client-logo-grid img{width:100%;max-width:120px;height:48px}
+
+  .collection-head{gap:22px}
+  .collection-head>p{margin:0;font-size:.92rem;line-height:1.75}
+  .product-filters{margin-top:30px}
+  .product-filter,.product-filter:first-child{min-height:46px;padding:12px 3px;font-size:clamp(.64rem,2.8vw,.76rem)}
+  .product-filter+.product-filter:before{height:17px}
+  .product-filters+.cards{margin-top:28px}
+  .cards{grid-template-columns:1fr;gap:18px}
+  .gift-card,.gift-card.featured{padding-bottom:24px}
+  .gift-card .card-art{aspect-ratio:1/1;margin-bottom:22px;background-position:center}
+  .gift-card>.card-tag,.gift-card>h3,.gift-card>p:not(.card-tag){margin-left:20px;margin-right:20px}
+  .gift-card>h3{font-size:1.3rem;line-height:1.45}
+  .gift-card>p:not(.card-tag){min-height:0;font-size:.9rem}
+  .gift-card .product-card-footer{margin:20px 20px 0;padding-top:16px}
+  .gift-card .product-detail{margin:0 20px}
+  .product-more{width:44px;height:44px;flex:0 0 44px}
+  .product-detail dl>div{grid-template-columns:68px 1fr;gap:9px}
+
+  .benefits{display:block}
+  .benefit-visual{min-height:360px;background-position:center}
+  .benefit-copy{padding:68px 20px}
+  .benefit-copy h2{font-size:1.8rem}
+  .benefit-title-line{white-space:normal}
+  .benefit-list{margin-top:38px}
+  .benefit-list>div{grid-template-columns:34px 1fr;padding:20px 0}
+  .benefit-list p{font-size:.88rem}
+
+  .quality-care{padding-left:16px;padding-right:16px}
+  .care-certificate{padding-left:22px;padding-right:22px}
+  .care-description{font-size:.94rem;line-height:1.9}
+  .gift-care-banner-section{padding:24px 0}
+
+  .contact{gap:36px}
+  .contact-copy h2{font-size:1.85rem}
+  .contact-copy>p:last-child{font-size:.92rem}
+  .contact-panel{padding:26px 18px}
+  .contact-guide{font-size:.9rem}
+  .inquiry-form label{font-size:.78rem}
+  .inquiry-form input{height:46px;font-size:16px}
+  .inquiry-form textarea{min-height:110px;font-size:16px}
+  .inquiry-submit{min-height:48px}
+  .contact-option{grid-template-columns:40px minmax(0,1fr) auto;gap:11px;padding:15px 11px}
+  .contact-option strong{font-size:.9rem}
+  .contact-option em{font-size:.72rem}
+
+  .faq-head{margin-bottom:24px}
+  .faq-head h2{font-size:2rem}
+  .faq-list summary{min-height:58px;padding:18px 40px 18px 0;font-size:.94rem;line-height:1.55}
+  .faq-list summary::after{top:15px;right:4px}
+  .faq-list details p{padding:0 34px 20px 0;font-size:.9rem}
+
+  footer{padding:44px 20px;gap:16px}
+  .footer-info{width:100%;font-size:.72rem;overflow-wrap:anywhere}
+}
+
+@media(max-width:370px){
+  .site-header{padding-left:12px;padding-right:12px}
+  .header-kakao{display:none}
+  .header-actions .button-small{padding-left:9px;padding-right:9px}
+  .hero-copy{padding-left:17px;padding-right:17px}
+  .section{padding-left:17px;padding-right:17px}
+  .product-filter,.product-filter:first-child{font-size:.62rem}
+}
+
+/* 섹션별 대제목 크기 통일 */
+.section h2,
+.intro-grid>div:first-child h2,
+.benefit-copy h2,
+.contact-copy h2,
+.faq-head h2{
+  font-size:clamp(2.55rem,3.45vw,3.45rem);
+  line-height:1.3;
+  letter-spacing:-.055em;
 }
 
 @media(max-width:700px){
-  .steps{display:grid;grid-template-columns:1fr;gap:14px;margin-top:48px;padding-left:0;border-top:0}
-  .steps li,.steps li+li{position:relative;min-height:0;padding:24px 22px;border:1px solid rgba(23,60,50,.12);background:rgba(255,255,255,.38)}
-  .steps span{position:static;display:block;width:auto;height:auto;margin:0 0 18px;border:0;border-radius:0;background:transparent;color:#a88749;font-weight:700}
-  .steps h3{margin:0 0 7px}
-  .steps p{margin:0}
+  .section h2,
+  .intro-grid>div:first-child h2,
+  .benefit-copy h2,
+  .contact-copy h2,
+  .faq-head h2{
+    font-size:clamp(1.9rem,8.2vw,2.3rem);
+    line-height:1.34;
+  }
+}
+
+/* 모바일 메인 버튼과 소개 문구 간격 조정 */
+@media(max-width:700px){
+  .hero-lead br{display:block}
+  .hero-actions{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px}
+  .hero-actions .button{width:auto;min-height:42px;padding:11px 15px;font-size:.78rem}
+  .hero-actions .hero-secondary span{margin-left:10px}
+  .hero{min-height:90svh}
+  .hero-copy{padding-top:102px;padding-bottom:32px}
+  .hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:25px;font-size:.67rem;line-height:1.45;text-align:center}
+  .hero-proof li{min-width:0;word-break:keep-all}
+  .hero-proof li:before{display:block;margin:0 0 4px}
+}
+
+@media(max-width:370px){
+  .hero-actions .button{padding:10px 12px;font-size:.73rem}
+}
+
+/* 고객사 로고 시각적 크기 미세 조정 */
+@media(min-width:901px){
+  .client-logo-grid .client-nh img{transform:scale(.92)!important}
+  .client-logo-grid .client-korea img{transform:scale(.92)!important}
+  .client-logo-grid .client-kbs img{transform:scale(.74)!important}
+}
+
+@media(max-width:900px){
+  .client-logo-grid .client-nh img{transform:scale(1.16)!important}
+  .client-logo-grid .client-korea img{transform:scale(1.22)!important}
+  .client-logo-grid .client-kbs img{transform:scale(.92)!important}
+}
+
+/* 섹션 제목 위 금색 라벨 크기 조정 */
+.eyebrow{font-size:.68rem}
+@media(max-width:700px){.eyebrow{font-size:.64rem}}
+
+/* 모바일 상품카드 좌우 스와이프 */
+@media(max-width:700px){
+  .collection{overflow:hidden}
+  .collection .cards{
+    display:flex;
+    gap:14px;
+    width:auto;
+    margin-right:-20px;
+    padding-right:20px;
+    padding-bottom:8px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    overscroll-behavior-inline:contain;
+    scroll-snap-type:x mandatory;
+    scroll-padding-left:0;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    touch-action:pan-x pan-y;
+  }
+  .collection .cards::-webkit-scrollbar{display:none;width:0;height:0}
+  .collection .gift-card{
+    flex:0 0 calc(100% - 38px);
+    width:calc(100% - 38px);
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+  }
+  .collection .gift-card.product-hidden{display:none}
+}
+
+@media(max-width:370px){
+  .collection .cards{margin-right:-17px;padding-right:17px}
+  .collection .gift-card{flex-basis:calc(100% - 28px);width:calc(100% - 28px)}
+}
+
+/* 기업 서비스 마지막 항목 아래 초록색 여백 축소 */
+.benefit-copy{padding-bottom:clamp(48px,5vw,78px)}
+@media(max-width:700px){.benefit-copy{padding-bottom:28px}}
+
+/* 문의 안내문 모바일 줄바꿈 */
+.mobile-break{display:none}
+@media(max-width:700px){.mobile-break{display:block}}
+
+/* FAQ 답변을 Q. 뒤 질문 문구 시작선에 정렬 */
+.faq-list details p{
+  padding-left:26px;
+  word-break:keep-all;
+  overflow-wrap:break-word;
+  text-wrap:pretty;
+}
+@media(max-width:700px){
+  .faq-list details p{padding-left:24px;padding-right:20px}
 }

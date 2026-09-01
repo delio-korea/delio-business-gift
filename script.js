@@ -16,6 +16,7 @@ document.querySelectorAll('.reveal').forEach((element) => observer.observe(eleme
 
 const productFilters = document.querySelectorAll('[data-filter]');
 const productCards = document.querySelectorAll('[data-price]');
+const productGrid = document.querySelector('[data-product-grid]');
 
 productFilters.forEach((button) => {
   button.addEventListener('click', () => {
@@ -25,6 +26,9 @@ productFilters.forEach((button) => {
       const visible = selected === 'all' || card.dataset.price === selected;
       card.classList.toggle('product-hidden', !visible);
     });
+    if (productGrid) {
+      productGrid.scrollTo({ left: 0, behavior: 'smooth' });
+    }
   });
 });
 
