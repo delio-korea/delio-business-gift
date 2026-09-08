@@ -99,6 +99,13 @@
 .hero .hero-secondary{background:#f3efe5;color:#173c32}
 .hero .hero-secondary:hover{background:#fff}
 .hero .hero-secondary span{margin-left:16px}
+.hero-actions .button{width:180px;justify-content:center}
+.hero-proof{font-size:.88rem}
+.intro>.section-label{display:inline-flex;width:max-content;align-items:center;margin-bottom:36px;padding:7px 13px;border:1px solid rgba(100,143,94,.34);border-radius:999px;background:#eef6e8;color:#5f8b5b;font-size:.64rem;font-weight:700;letter-spacing:.14em;line-height:1.2}
+.collection>.section-label,.packaging>.section-label,.process>.section-label{display:inline-flex;width:max-content;align-items:center;margin-bottom:36px;padding:7px 13px;border:1px solid rgba(100,143,94,.34);border-radius:999px;background:#eef6e8;color:#5f8b5b;font-size:.64rem;font-weight:700;letter-spacing:.14em;line-height:1.2}
+.collection-head h2,.packaging-head h2,.process-head h2{margin-top:0}
+.intro-grid>div:first-child h2{margin-top:0}
+@media(max-width:700px){.hero-actions .button{width:calc(50% - 4px);min-width:0}}
 
 /* 보자기 포장과 제철 과일을 담은 추석 메인 비주얼 */
 .hero-media{background-image:linear-gradient(90deg,rgba(9,29,24,.96) 0%,rgba(9,29,24,.74) 36%,rgba(9,29,24,.08) 68%),url("assets/chuseok-hero-v2.png")}
@@ -176,7 +183,7 @@
 .standards>div{padding-left:20px;padding-right:20px}
 .standards h3{min-height:1.45em}
 .intro-grid{grid-template-columns:.88fr 1.12fr;gap:5vw;align-items:start}
-.intro-copy{max-width:none;padding-top:58px}
+.intro-copy{max-width:none;padding-top:0}
 .intro-grid>div:first-child h2{font-size:clamp(2.2rem,3.35vw,3.65rem)}
 .intro-title-line{white-space:nowrap}
 .standards>div,.standards>div:first-child{padding-left:22px;padding-right:22px}
@@ -322,6 +329,24 @@
 @media(min-width:901px){.client-logo-grid>div:nth-child(6){grid-column:1;grid-row:2}.client-logo-grid>div:nth-child(7){grid-column:2;grid-row:2}.client-logo-grid>div:nth-child(8){grid-column:3;grid-row:2}.client-logo-grid>div:nth-child(9){grid-column:4;grid-row:2}}
 @media(max-width:900px){.client-logo-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:52px;row-gap:40px}.client-logo-grid>div:nth-child(9){grid-column:auto}}
 @media(max-width:620px){.client-showcase>p{margin-bottom:28px;font-size:.94rem}.client-logo-grid{column-gap:30px;row-gap:30px}}
+
+/* 기업용 레퍼런스 아래 실제 운영 영상 2분할 */
+.client-video-grid{max-width:900px;margin:36px auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.client-video-card{margin:0;overflow:hidden;background:#f3f6ef;border:1px solid rgba(23,60,50,.12)}
+.client-video-card video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.client-video-card figcaption{display:grid;gap:5px;padding:16px 18px 18px;color:#173c32}
+.client-video-card strong{font-family:"Noto Serif KR",serif;font-size:1.02rem}
+.client-video-card span{font-size:.8rem;line-height:1.65;color:#66736b}
+@media(max-width:620px){.client-video-grid{grid-template-columns:1fr;gap:14px;margin-top:32px}.client-video-card figcaption{padding:13px 15px 15px}.client-video-card strong{font-size:.96rem}.client-video-card span{font-size:.76rem}}
+
+/* 로고 영역과 분리한 실제 운영 과정 섹션 */
+.client-process-showcase{padding:clamp(58px,7vw,96px) clamp(22px,6vw,100px);background:#f1f6e9;border-bottom:1px solid var(--line)}
+.client-process-inner{max-width:1080px;margin:0 auto}
+.client-process-kicker{margin:0 0 6px;color:#6f965f;font-size:.72rem;font-weight:700;letter-spacing:.14em}
+.client-process-showcase h2{margin:0;color:#173c32;font-family:"Noto Serif KR",serif;font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.35;letter-spacing:-.05em}
+.client-process-showcase .client-video-grid{max-width:none;margin-top:32px}
+@media(max-width:620px){.client-process-showcase{padding:54px 22px 62px}.client-process-showcase h2{font-size:1.8rem}.client-process-showcase .client-video-grid{margin-top:26px}}
+@media(max-width:620px){.client-process-showcase h2{font-size:1.45rem;line-height:1.5;word-break:keep-all;letter-spacing:-.06em}}
 
 /* 긴 NH투자증권 로고가 세림과 겹치지 않도록 시각적 위치 보정 */
 @media(min-width:901px){.client-logo-grid>div:nth-child(9) img{transform:translateX(30px) scale(.84)}}
@@ -609,4 +634,96 @@
 }
 @media(max-width:700px){
   .faq-list details p{padding-left:24px;padding-right:20px}
+}
+
+/* Gift packaging proof */
+.packaging{background:#faf7f0}
+.packaging-head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:clamp(40px,7vw,110px);align-items:end;max-width:1536px;margin:0 auto}
+.packaging-head>p{margin:0;color:#5e6963;font-size:.95rem;word-break:keep-all}
+.packaging-mobile-infographic{display:none;margin:0}
+.packaging-mobile-infographic img{display:block;width:100%;height:auto}
+.packaging-layout{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(300px,.82fr);gap:20px;max-width:1536px;margin:58px auto 0;align-items:stretch}
+.packaging-visual{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(220px,.78fr);gap:20px;min-width:0}
+.packaging-visual{position:relative;display:block;margin:0;aspect-ratio:3 / 2;min-height:0;overflow:hidden;background:#eee9df}
+.packaging-visual>img{display:block;width:100%;height:100%;min-height:0;object-fit:cover}
+.packaging-photo{position:relative;display:flex;min-width:0;min-height:560px;flex-direction:column;margin:0;background:#eee9df;overflow:hidden}
+.packaging-photo img{display:block;width:100%;height:100%;min-height:0;flex:1;object-fit:cover}
+.packaging-photo-main img{object-position:center}
+.packaging-photo-sub img{object-position:center}
+.packaging-photo figcaption{display:flex;gap:14px;align-items:flex-start;min-height:108px;padding:20px 22px;background:#173c32;color:#fff}
+.packaging-photo figcaption>b,.packaging-details>div>b{color:#d6bc83;font-size:.68rem;letter-spacing:.08em}
+.packaging-photo figcaption div{display:grid;gap:5px}
+.packaging-photo figcaption strong{font-family:"Noto Serif KR",serif;font-size:1rem;font-weight:600}
+.packaging-photo figcaption span{color:rgba(255,255,255,.65);font-size:.73rem;word-break:keep-all}
+.packaging-details{display:flex;min-width:0;flex-direction:column;justify-content:center;padding:clamp(28px,3vw,48px);border:1px solid rgba(23,60,50,.16);background:#f1eadc}
+.packaging-kicker{margin:0 0 25px;color:var(--gold);font-size:.65rem;font-weight:700;letter-spacing:.14em}
+.packaging-details>div{display:grid;grid-template-columns:28px 1fr;gap:8px;padding:20px 0;border-top:1px solid rgba(23,60,50,.15)}
+.packaging-details span{display:grid;gap:5px;color:#657069;font-size:.76rem;line-height:1.65;word-break:keep-all}
+.packaging-details strong{color:#243b32;font-family:"Noto Serif KR",serif;font-size:.96rem;font-weight:600}
+.packaging-note{max-width:1536px;margin:18px auto 0;color:#7a827e;font-size:.7rem;text-align:right}
+@media(max-width:1100px){.packaging-layout{grid-template-columns:1fr}.packaging-details{display:grid;grid-template-columns:repeat(2,1fr);column-gap:36px}.packaging-kicker{grid-column:1/-1}.packaging-photo{min-height:510px}}
+@media(max-width:700px){.packaging-visual{min-height:360px}.packaging-visual>img{min-height:360px}.packaging-photo{min-height:360px}}
+
+/* Corporate packaging palette */
+.packaging{background:var(--green);color:#fff;scroll-margin-top:82px}
+
+.packaging-head .eyebrow{color:#d6bc83}
+.packaging-head>p{color:rgba(255,255,255,.75)}
+.packaging-details{background:var(--deep);border-color:rgba(214,188,131,.3);padding:clamp(34px,3.4vw,56px)}
+.packaging-details>div{padding:24px 0;border-top-color:rgba(214,188,131,.22)}
+.packaging-details strong{color:var(--paper);font-size:1.08rem}
+.packaging-details span{color:rgba(255,255,255,.7);font-size:.86rem;line-height:1.7}
+.packaging-kicker{color:#d6bc83;font-size:.7rem;margin-bottom:28px}
+.packaging-note{color:rgba(255,255,255,.6)}
+@media(max-width:900px){.packaging-head{grid-template-columns:1fr;gap:25px}}
+@media(max-width:700px){.packaging.section{padding-top:64px;padding-bottom:64px}.packaging-head{gap:20px}.packaging-layout{margin-top:28px}}
+@media(max-width:620px){.packaging-head{display:block}.packaging-head h2{font-size:clamp(1.85rem,8vw,2.3rem);line-height:1.35}.packaging-head>p{margin-top:25px;font-size:.88rem;line-height:1.8}.packaging-layout,.packaging-note{display:none}.packaging-mobile-infographic{display:block;width:100%;margin-top:28px;overflow:hidden;background:var(--ivory);box-shadow:0 18px 45px rgba(0,0,0,.16);line-height:0}}
+
+/* Product photos retain their full original framing. */
+.collection .gift-card img.product-photo{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;object-position:center;margin:0 0 25px;background:#f3eadb}
+
+/* 감사 상품도 동일한 사진 프레임을 가득 채워 좌우 여백을 없앱니다. */
+.collection .gift-card[data-category="gamsa"] img.product-photo,
+.collection .gift-card[data-category="maeum"] img.product-photo{aspect-ratio:4/3;object-fit:contain;object-position:center;margin:0 0 25px;background:#f3eadb}
+
+.product-price-block{min-width:0}.product-price-block .product-shipping{margin:5px 0 0;color:var(--green);font-size:.8rem;font-weight:500}
+
+
+
+/* Square Jeongseong photos: trim background vertically to match landscape frames. */
+.collection .gift-card[data-product-id="jeongseong-1"] img.product-photo,
+.collection .gift-card[data-product-id="jeongseong-3"] img.product-photo,
+.collection .gift-card[data-product-id="jeongseong-6"] img.product-photo{aspect-ratio:4/3;object-fit:cover;object-position:center 65%}
+/* Full-bleed photographs with background extended to preserve viewing distance. */
+.collection .jeongseong-photo-frame{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;margin-bottom:25px}
+.collection .gift-card .jeongseong-photo-frame img.product-photo{display:block;width:100%;max-width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:center;margin:0;transform:scale(1.12)}
+.collection .gift-card[data-product-id="jeongseong-5"] .jeongseong-photo-frame img.product-photo{transform:none}
+@media(max-width:620px){.intro .standards{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:0;row-gap:0}.intro .standards>div,.intro .standards>div:first-child{min-height:132px;padding:20px 13px;border:0}.intro .standards>div:nth-child(even){border-left:1px solid var(--line)}.intro .standards>div:nth-child(n+3){border-top:1px solid var(--line)}.intro .standards strong{font-size:1.15rem;margin-bottom:12px}.intro .standards h3{font-size:.82rem;line-height:1.4}.intro .standards p{font-size:.75rem;line-height:1.55}}
+@media(max-width:620px){.intro-grid{gap:18px}.intro-statement{font-size:.92rem;line-height:1.75}}
+
+.product-benefits{margin:0;padding-left:1.05em;line-height:1.65}.product-benefits li{margin:0}
+.product-detail dt{max-width:60px;line-height:1.45;word-break:keep-all}
+.consumer-price{margin:0 0 4px;color:#8a918c;font-size:.72rem;line-height:1.3}.product-price-block strong{display:block;font-size:1.08rem}
+.discount-rate{display:inline-block;margin-left:5px;color:#5f8b5b;font-size:.66rem;font-weight:700}
+.product-shipping{display:none}
+.gift-card{position:relative}.gift-badge{display:inline-flex;vertical-align:middle;align-items:center;margin-left:7px;padding:5px 9px;border-radius:999px;font-family:"Noto Sans KR",sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.04em;line-height:1}.gift-badge.recommended{background:#e6f2df;color:#477843;border:1px solid rgba(71,120,67,.2)}.gift-badge.popular{background:#fff1dc;color:#a3682b;border:1px solid rgba(163,104,43,.2)}
+.collection-photo-note{margin:12px 0 0;color:#8b958e;font-size:.72rem;line-height:1.5}
+@media(max-width:620px){.collection-photo-note{margin-top:10px;font-size:.7rem}.gift-badge{margin-left:5px;padding:4px 7px;font-size:.54rem}}
+.product-more{display:grid;place-items:center;line-height:1;text-align:center;padding:0}
+.collection-more{display:block;margin:28px auto 0;padding:12px 20px;border:1px solid rgba(23,60,50,.28);border-radius:999px;background:transparent;color:#173c32;font:600 .78rem/1 "Noto Sans KR",sans-serif;cursor:pointer}.collection-more span{margin-left:6px;font-size:1rem}.collection.compact .gift-card:nth-child(n+7){display:none}
+@media(max-width:700px){.collection-more{display:none!important}.collection.compact .gift-card:nth-child(n+7){display:block}}
+.collection-more{display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;text-align:center}.collection-more span{margin-left:0!important;line-height:1!important}.product-more{display:grid!important;place-items:center!important;align-items:center!important;justify-items:center!important;line-height:1!important;padding:0!important;text-align:center}
+
+/* Order process: two columns on desktop and mobile. */
+.process .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px;max-width:900px;margin:40px auto 0}
+.process .steps li::after{content:none}
+.process .steps p{max-width:280px;margin:0 auto;word-break:keep-all;overflow-wrap:break-word}
+@media(max-width:700px){
+  .process .steps{gap:28px 16px;margin-top:32px}
+  .process .step-icon{width:80px;height:80px}
+  .process .step-icon svg{width:42px;height:42px}
+  .process .step-number{margin-bottom:8px}
+  .process .steps span{margin:12px 0 7px;font-size:.68rem}
+  .process .steps h3{font-size:1rem;margin:0 0 7px}
+  .process .steps p{font-size:.8rem;line-height:1.65}
 }
