@@ -26,6 +26,10 @@ if (collectionSection && collectionMore) {
     collectionMore.setAttribute('aria-expanded', String(!expanded));
     collectionMore.querySelector('span').textContent = expanded ? '＋' : '－';
     collectionMore.firstChild.textContent = expanded ? '선물세트 더보기 ' : '선물세트 접기 ';
+    if (expanded) {
+      const sectionTop = collectionSection.getBoundingClientRect().top + window.scrollY - 78;
+      window.scrollTo({ top: Math.max(0, sectionTop), behavior: 'smooth' });
+    }
   });
 }
 
